@@ -12,7 +12,7 @@ with header:
 with description:
     st.header("**Description**")
 
-    st.markdown(">It is well known that the strain-dependent curves *G/G0* depend mainly on soil plasticity\n in cohesive soils (Vucetic 1991)"
+    st.markdown(">It is well known that the strain-dependent curves *G/G₀* depend mainly on soil plasticity\n in cohesive soils (Vucetic 1991)"
     " and is affected by the means of effective stress in\n cohesionless soils (Ishibashi & Zhang 1993).")
 
 
