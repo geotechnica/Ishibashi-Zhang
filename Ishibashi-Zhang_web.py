@@ -7,25 +7,42 @@ plot = st.beta_container()
 references = st.beta_container()
 
 with header:
-    st.title("Define and Plot Your Soil Material Dynamic Properities in terms of Ishibashi-Zhang")
-
+    st.title("Define and plot your soil material dynamic properities in terms of Ishibashi-Zhang")
 
 with description:
-    st.title("Description")
-    st.text(" It is well known that the strain-dependent curves")
-    st.latex(r'''\frac{G}{G_0}''')
-    st.text("depend mainly on soil plasticity\n in cohesive soils (Vucetic1991)"
-            " and is affected by the means of effective stress in\n cohesionless soils (Ishibashi & Zhang 1993).")
-    st.latex(r'''x^2 = \frac{n^2+n}{10}''')
+    st.header("**Description**")
+
+    st.markdown(">It is well known that the strain-dependent curves *G/G0* depend mainly on soil plasticity\n in cohesive soils (Vucetic 1991)"
+    " and is affected by the means of effective stress in\n cohesionless soils (Ishibashi & Zhang 1993).")
+
+
+    st.latex(r'''\small\frac{G}{G_{max}} = K(\gamma)\cdot\sigma_0^{-m(\gamma)-m_0}''')
+
+    st.markdown(">Where **K(γ)** is a decreasing function of the cyclic shear strain amplitude **γ**,\n"
+            "**σ** is the mean effective confining pressure and power **m(γ)** is an increasing function of **γ**. \n"
+            "**Gmax**, the maximum dynamic shear modulus is the maximum value of **G**.")
+
+    st.latex(r'''\small m(\gamma,I_p)-m_0 = 0.272\cdot[ 1-\tanh\cdot\{\ln(\displaystyle\frac{0.000556}{\gamma})^{0.4} \})]\cdot e^{-0.0145\cdot I_p^{1.3}}''')
+    st.latex(r'''\small K(\gamma,I_p) = 0.5\cdot[ 1+\tanh\cdot\{\ln(\displaystyle\frac{0.000102+n(I_p)}{\gamma})^{0.492} \})]''')
+
+    st.latex(r'''\small
+    n(I_p)=\left\{ \begin{array}{ll}
+    0.0 & \textrm{for } \quad I_p = 0 \qquad\quad\text{(sandy soils)}\\
+    3.37\cdot10^{-6}\cdot I_p^{1.404} & \textrm{for } \quad 0<I_p\leq15\quad\text{(low plastic soils)}\\
+    7.0\cdot10^{-7}\cdot I_p^{1.976} & \textrm{for } \quad 15<I_p\leq70 \quad\text{(medium plastic soils)}\\
+    2.7\cdot10^{-5}\cdot I_p^{1.115} & \textrm{for } \quad I_p>70\quad\qquad\text{(high plastic soils)}\\
+    \end{array}\right.''')
+
+
 
 with features:
-    st.title("Variable")
-    st.header("PI (%)")
+    st.header("**Variable**")
+    st.subheader("PI (%)")
 
     sel_col, disp_col = st.beta_columns(2)
     PI = sel_col.slider("Input Plasticity Index", min_value=0,max_value=200,step = 1)
 
-    st.header("σm (kPa)")
+    st.subheader("σm (kPa)")
     σm = int(st.text_input("Input Mean Effective Value (kPa)", 1))
     import sympy as sym
     Gmax, sst, M, K = sym.symbols("Gmax sst M K", real=True)
@@ -34,7 +51,7 @@ with plot:
     import numpy as np
     import sympy as sym
     import matplotlib.pyplot as plt
-    st.header("Plot")
+
 
     Gmax, sst, M, K = sym.symbols("Gmax sst M K", real=True)
 
@@ -73,9 +90,9 @@ with plot:
 
 
 with references:
-    st.title("References")
-    st.text("Ishibashi, I., & Zhang, X. (1993). \nUnified dynamic shear moduli and damping ratios of sand and clay.\nSoils and Foundations, 33(1), 182–191.\nhttps://doi.org/10.3208/sandf1972.33.182")
+    st.header("**Citation**")
+    st.markdown("Ishibashi, I., & Zhang, X. (1993). \nUnified dynamic shear moduli and damping ratios of sand and clay.\nSoils and Foundations, 33(1), 182–191.\n(https://doi.org/10.3208/sandf1972.33.182)")
 
 
-
-
+st.markdown(":arrow_forward:[Linkedin](https://www.linkedin.com/in/an%C4%B1l-odabas/)")
+st.markdown(":e-mail:[Gmail](anil.odabas@gmail.com)")
