@@ -12,13 +12,13 @@ with header:
 with description:
     st.header("**Description**")
 
-    st.markdown(">It is well known that the strain-dependent curves **G/G₀** depend mainly on soil plasticity\n in cohesive soils (Vucetic 1991)"
-    " and is affected by the means of effective stress in\n cohesionless soils (Ishibashi & Zhang 1993).")
+    st.markdown(">>It is well known that the strain-dependent curves **G/G₀** depend mainly on soil plasticity\n in cohesive soils (*Vucetic, 1991*)"
+    " and is affected by the means of effective stress in\n cohesionless soils (*Ishibashi & Zhang, 1993*).")
 
 
     st.latex(r'''\small\frac{G}{G_{max}} = K(\gamma)\cdot\sigma_0^{-m(\gamma)-m_0}''')
 
-    st.markdown(">Where **K(γ)** is a decreasing function of the cyclic shear strain amplitude **γ**,\n"
+    st.markdown(">>Where **K(γ)** is a decreasing function of the cyclic shear strain amplitude **γ**,\n"
             "**σ** is the mean effective confining pressure and power **m(γ)** is an increasing function of **γ**. \n"
             "**Gmax**, the maximum dynamic shear modulus is the maximum value of **G**.")
 
@@ -26,11 +26,11 @@ with description:
     st.latex(r'''\small K(\gamma,I_p) = 0.5\cdot[ 1+\tanh\cdot\{\ln(\displaystyle\frac{0.000102+n(I_p)}{\gamma})^{0.492} \})]''')
 
     st.latex(r'''\small
-    n(I_p)=\left\{ \begin{array}{ll}
-    0.0 & \textrm{for } \quad I_p = 0 \qquad\quad\text{(sandy soils)}\\
-    3.37\cdot10^{-6}\cdot I_p^{1.404} & \textrm{for } \quad 0<I_p\leq15\quad\text{(low plastic soils)}\\
-    7.0\cdot10^{-7}\cdot I_p^{1.976} & \textrm{for } \quad 15<I_p\leq70 \quad\text{(medium plastic soils)}\\
-    2.7\cdot10^{-5}\cdot I_p^{1.115} & \textrm{for } \quad I_p>70\quad\qquad\text{(high plastic soils)}\\
+    n(I_p)=\left\{ \begin{array}{lllr}
+    0.0 & \textrm{for } \quad I_p = 0 & \text{(sandy soils)}\\
+    3.37\cdot10^{-6}\cdot I_p^{1.404} & \textrm{for } \quad 0<I_p\leq15 & \text{(low plastic soils)}\\
+    7.0\cdot10^{-7}\cdot I_p^{1.976} & \textrm{for } \quad 15<I_p\leq70 & \text{(medium plastic soils)}\\
+    2.7\cdot10^{-5}\cdot I_p^{1.115} & \textrm{for } \quad I_p>70 & \text{(high plastic soils)}\\
     \end{array}\right.''')
 
 
