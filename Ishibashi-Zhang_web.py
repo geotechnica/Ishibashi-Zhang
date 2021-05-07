@@ -94,5 +94,5 @@ with references:
     st.markdown("Ishibashi, I., & Zhang, X. (1993). \nUnified dynamic shear moduli and damping ratios of sand and clay.\nSoils and Foundations, 33(1), 182–191.\n(https://doi.org/10.3208/sandf1972.33.182)")
 
 
-st.markdown(":arrow_forward:[Linkedin](https://www.linkedin.com/in/an%C4%B1l-odabas/)")
+st.markdown(":arrow_forward:[Linkedin](https://www.linkedin.com/in/anilodabas/)")
 st.markdown(":e-mail:[Gmail](anil.odabas@gmail.com)")
