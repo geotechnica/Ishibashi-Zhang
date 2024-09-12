@@ -1,10 +1,10 @@
 import streamlit as st
 
-header = st.beta_container()
-description = st.beta_container()
-features = st.beta_container()
-plot = st.beta_container()
-references = st.beta_container()
+header = st.container()
+description = st.container()
+features = st.container()
+plot = st.container()
+references = st.container()
 
 with header:
     st.title("Define and plot your soil material dynamic properities in terms of Ishibashi-Zhang")
@@ -39,7 +39,7 @@ with features:
     st.header("**Variable**")
     st.subheader("PI (%)")
 
-    sel_col, disp_col = st.beta_columns(2)
+    sel_col, disp_col = st.columns(2)
     PI = sel_col.slider("Input Plasticity Index", min_value=0,max_value=200,step = 1)
 
     st.subheader("σm (kPa)")
@@ -81,7 +81,7 @@ with plot:
     fig, ax1 = plt.subplots()
     ax2 = ax1.twinx()
     ax1.set_xlabel("Strain (%)")
-    ax1.set_ylabel("Gmax/G", color="C0")
+    ax1.set_ylabel("G/Gmax", color="C0")
     ax2.set_ylabel('Damping Ratio', color="r")
     ax1.semilogx(x, y)
     ax2.semilogx(x, D, color="r", linestyle='dashed')
